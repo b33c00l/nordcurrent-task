@@ -1,0 +1,16 @@
+#list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  flex-flow: column wrap;
+  height: 850px;
+}
+
+#message{
+	color:red;
+	font-size: 30px;
+}
+#time{
+	color:red;
+	font-size: 30px;
+}
