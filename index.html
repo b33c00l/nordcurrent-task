@@ -8,46 +8,56 @@
         <link rel="stylesheet" type="text/css" href="style.css">
     </head>
     <body>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-6 text-center p-1">Last rates update: <span id="message"></span></div>
-            <div class="col-3 text-right p-1">Time till next rates update <span id="time"></span></div>
-            <div class="col-3 text-left p-1">
-                <button class="btn btn-primary" type="button" onclick="getRates()">Update Rates Now</button>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-6 text-center p-1">Last rates update: <span id="message"></span></div>
+                <div class="col-3 text-right p-1">Time till next rates update <span id="time"></span></div>
+                <div class="col-3 text-left p-1">
+                    <button class="btn btn-primary" type="button" onclick="updateRates()">Update Rates Now</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="mySelect">Set rates auto update time in minutes</label>
+                        </div>
+                        <input id="utime" type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary" type="button" onclick="setUtime()">Set</button>
+                        </div>
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="mySelect">Select Currency To Convert To</label>
+                        </div>
+                        <select class="custom-select" id="mySelect">
+                        </select>
+                    </div>
+                    <div class="input-group mb-3">
+                        <input id="convert_me" type="text" class="form-control" placeholder="How much would you like to convert?" aria-label="How much would you like to convert?" aria-describedby="basic-addon2">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary" type="button" onclick="calculate()">Convert</button>
+                        </div>
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroup-sizing-default">Result</span>
+                        </div>
+                        <input id="result" type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                    </div>
+                    <div>
+                        <label for="histor">History:</label>
+                        <ul id="history" class="list-group"></ul>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <ul id="list">
+                    </ul>
+                </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-6">
-                <div class="input-group mb-3">
-                  <div class="input-group-prepend">
-                    <label class="input-group-text" for="mySelect">Select Currency To Convert To</label>
-                  </div>
-                  <select class="custom-select" id="mySelect">
-                  </select>
-                </div>
-                <div class="input-group mb-3">
-                  <input id="convert_me" type="text" class="form-control" placeholder="How much would you like to convert?" aria-label="How much would you like to convert?" aria-describedby="basic-addon2">
-                  <div class="input-group-append">
-                    <button class="btn btn-outline-secondary" type="button" onclick="calculate()">Convert</button>
-                  </div>
-                  <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Result</span>
-                  </div>
-                  <input id="result" type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
-                </div>
-                <div>
-                    <ul id="history" class="list-group"></ul>
-                </div>
-            </div>
-            <div class="col-6">
-                <ul id="list">
-                </ul>
-            </div>
-        </div>
-    </div>
-    <script type="text/javascript" src="script.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
-  </body>
+        <script type="text/javascript" src="script.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+    </body>
 </html>
